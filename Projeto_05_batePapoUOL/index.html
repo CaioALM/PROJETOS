@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,23 +12,55 @@
     <title>Bate-Papo UOL</title>
 </head>
 <body>
-    <header>
-        <div class="top-bar"> Barra de cima fixa 
+    <div id="login-screen" class="">
+        <img src="img/logo.png" class="logo" alt="Logo Bate-Papo Uol">
+        <img src="img/loader.gif" class="loader escondido" alt="Entrando...">
+        <span class="escondido">Entrando...</span>
+        <span class="warn soft-hidden">Nome já em uso. Por favor, digite outro.</span>
+        <input type="text" id="username" placeholder="Digite seu nome">
+        <button id="login-button">Entrar</button>
 
-
+    </div>
+    <div id="content">
+        <div id="left">
+            <div id="top-bar">
+                <img src="img/logo_small.png" class="logo" alt="Logo Bate-Papo Uol">
+                <ion-icon name="people" id="participants-button"></ion-icon>
+            </div>
+            <ul id="messages">
+            </ul>
+            <div id="bottom-bar">
+                <div>
+                    <input type="text" id="message" placeholder="Escreva aqui...">
+                    <span id="destination">Enviando para Todos (Público)</span>
+                </div>
+                <ion-icon name="paper-plane-outline" id="send"></ion-icon>
+            </div>
         </div>
-    </header>
-    <main>
-        <div class="conversas">
-            Conversas
+        <div id="right" class="escondido">
+            <div id="overlay"></div>
+            <div id="sidebar">
+                <span>Escolha um contato <br>para enviar mensagem:</span>
+                <ul id="participants">
+                </ul>
+                <span>Escolha a visibilidade:</span>
+                <ul id="privacy">
+                    <li>
+                        <div class="clicable-area"></div>
+                        <ion-icon name="lock-open"></ion-icon>Público<span class="check"></span>
+                    </li>
+                    <li>
+                        <div class="clicable-area"></div>
+                        <ion-icon name="lock-closed"></ion-icon>Reservadamente<span class="check escondido"></span>
+                        </ion-icon>
+                    </li>
+                </ul>
+            </div>
         </div>
-    
-    </main>
-    <div class="foot-bar">
-    <input type="text" placeholder="Escreva aqui..."> 
-    <ion-icon name="paper-plane-outline"></ion-icon>
-    </div>     
 
+    </div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
     <script src="script.js"></script>
 </body>
